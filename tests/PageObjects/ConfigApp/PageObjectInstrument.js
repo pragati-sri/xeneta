@@ -51,7 +51,7 @@ module.exports = {
         browser.sleep(10000);  
 
         //validations
-        expect(profile_ele.details.getText()).toBe('ID:test Description:used for automated testing Size:1277 Status:STABLE');
+        expect(profile_ele.details.getText()).toContain('ID:test Description:used for automated testing Size:1287 Status:STABLE');
 
         //teardown file upload
         button_ele.delete_profile_test.click();
