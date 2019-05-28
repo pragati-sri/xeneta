@@ -1,28 +1,28 @@
-var loginPage = require('../PageObjects/ConfigApp/PageObjectLogin'); 
-var userPage = require('../PageObjects/ConfigApp/PageObjectUsers'); 
+var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
+var userPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectUsers'); 
 
-describe('VFK-TC-69', function(){
+describe('VFK-TC-70', function(){
     /*
-    #2180-3 Create ENGINEER user as ADMIN 
+    #2180-5 Create MONITOR role as ADMIN
     */
    browser. waitForAngularEnabled(false);
 
-     it('admin role creation as engineer', function(){
+     it('should create MONITOR', function(){
         loginPage.vectusLogin();
         browser.sleep(2000);
-        userPage.createEngineer();
+        userPage.createMonitor();
         browser.sleep(2000);
         loginPage.vectusLogout();
         browser.sleep(2000);
-        loginPage.vectusLoginEngineer();
+        loginPage.vectusLoginMonitor();
         browser.sleep(2000);
-        userPage.engineerCreatesUser();
+        userPage.monitorCreatesUser();
         browser.sleep(2000);
         loginPage.vectusLogout();
         browser.sleep(2000);
         loginPage.loginAdmin();
         browser.sleep(2000);
-        userPage.deleteEngineer();
+        userPage.deleteMonitor();
         browser.sleep(2000);
         loginPage.vectusLogout();
         browser.sleep(2000);

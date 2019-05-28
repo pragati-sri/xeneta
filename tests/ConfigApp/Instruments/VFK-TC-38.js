@@ -1,5 +1,5 @@
-var loginPage = require('../PageObjects/ConfigApp/PageObjectLogin'); 
-var instrumentPage = require('../PageObjects/ConfigApp/PageObjectInstrument'); 
+var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
+var instrumentPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectInstrument'); 
 
 describe('VFK-TC-38', function(){
     /*

@@ -1,6 +1,6 @@
-var loginPage = require('../PageObjects/ConfigApp/PageObjectLogin'); 
-var userPage = require('../PageObjects/ConfigApp/PageObjectUsers'); 
-var cdbPage = require('../PageObjects/ConfigApp/PageObjectCDB');
+var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
+var userPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectUsers'); 
+var cdbPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectCDB');
 
 describe('VFK-TC-72,74,77,78', function(){
     /*
