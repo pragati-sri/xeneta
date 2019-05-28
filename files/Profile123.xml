@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<instrument-profile xmlns='http://subsea.akersolutions.com/instrument-profile' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://subsea.akersolutions.com/instrument-profile instrument_profile.xsd' format='1' name='PT Meter' instrument-type='PRESSURE_METER' schema-version='1' revision='8'>
+  <sensor id='Pressure' type='PRESSURE' engineering-unit='BAR' description='Calculated Pressure Value' />
+  <sensor id='Temp' type='TEMPERATURE' engineering-unit='DEG_CELSIUS' description='Calculated Temperature Value' />
+  <opaque-input id='ErrReg' type='LONG_INTEGER' description='Error Register' />
+  <opaque-input id='PresSta' type='LONG_INTEGER' description='Calculated Pressure Status' />
+  <opaque-input id='TempSta' type='LONG_INTEGER' description='Calculated Temperature Status' />
+  <diagnostics>
+    <temperature id='ElecTemp' engineering-unit='DEG_CELSIUS' description='Electronic Temperature' />
+  </diagnostics>
+</instrument-profile><!-- {"msg":"Fieldbuilder meta-info","generated":"2018-05-24T07:07:41+0000","project":{"id":"5af2daa2e22e8255f9ddd2b6","name":"WS Presentation"},"resource":{"id":"5b0544f3e22e827fa1571a82","version":8,"vectusId":"PT","name":"PT Meter","description":"Workshop demo"}} -->

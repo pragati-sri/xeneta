@@ -43,7 +43,7 @@ module.exports = {
         dialog_ele.description.sendKeys('used for automated testing');
         browser.sleep(2000);
         //upload file from windows file selector
-        var fileToUpload = 'C:/Users/326952/Downloads/Profile123.xml',
+        var fileToUpload = 'C:/Verification/practice protractor_21feb/files/Profile123.xml',
         absolutePath = path.resolve(__dirname, fileToUpload);
         element(by.css('input[type="file"]')).sendKeys(absolutePath);  
         browser.sleep(2000);
@@ -76,7 +76,7 @@ module.exports = {
         dialog_ele.description.sendKeys('used for automated testing');
         browser.sleep(2000);
         //upload invalid profile from windows file selector
-        var fileToUpload = 'C:/Users/326952/Downloads/invalid_profile.xml',
+        var fileToUpload = 'C:/Verification/practice protractor_21feb/files/invalid_profile.xml',
         absolutePath = path.resolve(__dirname, fileToUpload);
         element(by.css('input[type="file"]')).sendKeys(absolutePath);  
         browser.sleep(2000);

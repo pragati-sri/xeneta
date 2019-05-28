@@ -58,7 +58,7 @@ module.exports = {
         standby_ele.standby_radio.click();
         browser.sleep(2000);
         //upload cdb file
-        var fileToUpload = 'C:/Users/326952/Downloads/cdb.tgz',
+        var fileToUpload = 'C:/Verification/practice protractor_21feb/files/cdb.tgz',
         absolutePath = path.resolve(__dirname, fileToUpload);
         element(by.css('input[type="file"]')).sendKeys(absolutePath);
         browser.sleep(2000);
@@ -93,7 +93,7 @@ module.exports = {
         //browser.sleep(2000);
 
         //upload cdb file
-        var fileToUpload = 'C:/Users/326952/Downloads/cdb.tgz',
+        var fileToUpload = 'C:/Verification/practice protractor_21feb/files/cdb.tgz',
         absolutePath = path.resolve(__dirname, fileToUpload);
         element(by.css('input[type="file"]')).sendKeys(absolutePath);
         browser.sleep(2000);
