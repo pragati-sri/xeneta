@@ -1,5 +1,5 @@
-var loginPage = require('../PageObjects/ConfigApp/PageObjectLogin'); 
-var nodePage = require('../PageObjects/ConfigApp/PageObjectNode'); 
+var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
+var nodePage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectNode'); 
 
 describe('VFK-TC-121', function(){
     /*

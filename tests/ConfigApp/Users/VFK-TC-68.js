@@ -21,5 +21,8 @@ describe('VFK-TC-68', function(){
         loginPage.loginAdmin();
         userPage.deleteOperator();
         loginPage.vectusLogout();
+        browser.sleep(2000);
+        browser.driver.navigate().refresh();
+        browser.sleep(2000);
     });
 });

@@ -1,5 +1,5 @@
-var loginPage = require('../PageObjects/ConfigApp/PageObjectLogin'); 
-var CDBPage = require('../PageObjects/ConfigApp/PageObjectCDB'); 
+var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
+var CDBPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectCDB'); 
 
 describe('VFK-TC-58,60', function(){
     /*
@@ -16,6 +16,8 @@ describe('VFK-TC-58,60', function(){
         CDBPage.deleteStandbyCDB();
         browser.sleep(2000);
         loginPage.vectusLogout();
+        browser.sleep(2000);
+        browser.driver.navigate().refresh();
         browser.sleep(2000);
     });
 });

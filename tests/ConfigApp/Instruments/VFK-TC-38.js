@@ -17,5 +17,8 @@ describe('VFK-TC-38', function(){
         instrumentPage.uploadInvalidInstrumentProfile();
         browser.sleep(2000);
         loginPage.vectusLogout();
+        browser.sleep(2000);
+        browser.driver.navigate().refresh();
+        browser.sleep(2000);
     });
 });

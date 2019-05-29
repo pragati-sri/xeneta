@@ -29,8 +29,9 @@ exports.config ={
     suites: {
         Instrument: './tests/ConfigApp/Instruments/*.js',
         Users: './tests/ConfigApp/Users/*.js',
+        CDBManagement: './tests/ConfigApp/CDBManagement/*.js',
     },
-    //specs: ['./tests/ConfigApp/Users/VFK-TC-67.js','./tests/ConfigApp/Users/VFK-TC-69.js'],
+    //specs: ['./tests/ConfigApp/VFK-TC-68.js'],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){
