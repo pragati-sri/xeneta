@@ -1,5 +1,5 @@
-var toDoPage = require('../PageObjects/FieldBuilder/PageObjectHome'); 
-var fingerprint = require('../PageObjects/FieldBuilder/PageObjectFingerprint');
+var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
+var fingerprint = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectFingerprint');
 
 describe('VFK-TC-627', function(){
     /*

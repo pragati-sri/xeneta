@@ -27,12 +27,17 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
     suites: {
-        Instrument: './tests/ConfigApp/Instruments/*.js',
+        //for configApp
+        Instruments: './tests/ConfigApp/Instruments/*.js',
         Users: './tests/ConfigApp/Users/*.js',
         CDBManagement: './tests/ConfigApp/CDBManagement/*.js',
         Others: './tests/ConfigApp/Others/*.js',
+        //for fieldBuilder
+        Instruments_fb: './tests/FieldBuilder/Instruments_fb/*.js',
+        CDB_fb: './tests/FieldBuilder/CDB_fb/*.js',
+        IntegratedConfigApp: './tests/FieldBuilder/IntegratedConfigApp/*.js',
     },
-    //specs: ['./tests/ConfigApp/VFK-TC-121.js'],
+    //specs: ['./tests/FieldBuilder/VFK-TC-620.js'],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){

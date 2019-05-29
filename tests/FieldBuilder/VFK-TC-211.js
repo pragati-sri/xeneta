@@ -1,5 +1,5 @@
-var toDoPage = require('../PageObjects/FieldBuilder/PageObjectHome'); 
-var semPage = require('../PageObjects/FieldBuilder/PageObjectSEM');
+var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
+var semPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectSEM');
 
 describe('VFK-TC-211', function(){
     /*

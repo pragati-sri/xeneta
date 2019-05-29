@@ -1,5 +1,5 @@
-var toDoPage = require('../PageObjects/FieldBuilder/PageObjectHome'); 
-var instrument = require('../PageObjects/FieldBuilder/PageObjectIstruments');
+var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
+var instrument = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectIstruments');
 
 describe('VFK-TC-219', function(){
     /*
