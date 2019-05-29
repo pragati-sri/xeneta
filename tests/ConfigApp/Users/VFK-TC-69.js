@@ -26,5 +26,7 @@ describe('VFK-TC-69', function(){
         browser.sleep(2000);
         loginPage.vectusLogout();
         browser.sleep(2000);
+        browser.driver.navigate().refresh();
+        browser.sleep(2000);
     });
 });

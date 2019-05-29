@@ -13,5 +13,8 @@ describe('VFK-TC-67', function(){
         userPage.createAdmin();
         browser.sleep(2000);
         loginPage.vectusLogout();
+        browser.sleep(2000);
+        browser.driver.navigate().refresh();
+        browser.sleep(2000);
     });
 });

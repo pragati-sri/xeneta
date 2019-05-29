@@ -10,5 +10,7 @@ describe('VFK-TC-66', function(){
         browser.sleep(2000);
         userPage.verifyError401();
         browser.sleep(2000);
+        browser.driver.navigate().refresh();
+        browser.sleep(2000);
     });
 });
