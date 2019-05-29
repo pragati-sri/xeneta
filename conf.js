@@ -37,7 +37,7 @@ exports.config ={
         CDB_fb: './tests/FieldBuilder/CDB_fb/*.js',
         IntegratedConfigApp: './tests/FieldBuilder/IntegratedConfigApp/*.js',
     },
-    //specs: ['./tests/FieldBuilder/VFK-TC-620.js'],
+    //specs: ['./tests/FieldBuilder/IntegratedConfigApp/VFK-TC-246.js'],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){

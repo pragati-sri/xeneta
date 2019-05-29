@@ -102,13 +102,4 @@ module.exports = {
         var field_elements = this.fieldElements;
         field_elements.edit_cdb_button.click();
     },
-    //not completed -- not needed
-    /*addSem: function(item) {  
-        var field_elements = this.fieldElements;  
-        browser.actions().click(field_elements.SRM_A, protractor.Button.RIGHT).perform();
-        field_elements.add_sem_button.click();
-        field_elements.new_Sem.click(),
-        field_elements.write_name.sendKeys('audit_log'),
-        field_elements.submit_button.click(),
-        },*/
 };

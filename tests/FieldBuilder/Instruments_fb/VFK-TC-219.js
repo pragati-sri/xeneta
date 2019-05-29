@@ -5,7 +5,8 @@ describe('VFK-TC-219', function(){
     /*
     #2647 Verify that it is possible to manage Instrument Profiles  
     */
- 
+   browser. waitForAngularEnabled(false);
+   
      it('should manage instrument profiles', function(){
         toDoPage.go();
         toDoPage.clickInstrument();
