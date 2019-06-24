@@ -24,7 +24,7 @@ module.exports = {
     },
     //when creating a new profile/definition/mapping
     dialogueBoxElements:{
-        id: element(by.css('[name="vectusId"]')),
+        id: element(by.id('vectusId')),
         description: element(by.css('[name="description"]')),
         definition: element(by.css('[name="definitionId"]')),
         profile: element.all(by.css('[name="profileId"]')).last(),
@@ -85,7 +85,8 @@ module.exports = {
         mapping_elements.reset_command.click().clear();
         this.save();
     },
-    changeMappingName: function(item) {  
+    changeMappingName: function(item) { 
+        browser.sleep(2000); 
         var mapping_elements = this.mappingElements;   
         mapping_elements.mappings.click();
         browser.sleep(1000);
@@ -93,8 +94,7 @@ module.exports = {
         browser.sleep(1000);
         mapping_elements.general.click();
     },
-    createNewMapping: function(item) {  
-        var mapping_elements = this.mappingElements;   
+    createNewMapping: function(item) {    
         this.clickAdd();
         this.dialogueBoxElements.id.sendKeys(1);
         this.dialogueBoxElements.description.sendKeys('bla');
@@ -114,6 +114,7 @@ module.exports = {
     },
 
     changeDefinitionName: function(item) {  
+        browser.sleep(2000);
         var definition_elements = this.definitionElements;   
         definition_elements.definitions.click();
         browser.sleep(1000);
@@ -127,6 +128,7 @@ module.exports = {
     },
 
     changeProfileName: function(item) {  
+        browser.sleep(2000);
         var profile_elements = this.profileElements;   
         profile_elements.profile.click();
         browser.sleep(1000);

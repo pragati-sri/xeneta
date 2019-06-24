@@ -21,6 +21,15 @@ module.exports = {
         browser.get('http://pragati:pragati123@fieldbuilder-pt-vm1/fieldbuilder/static#/project/5b8668bfe22e8203b383237f/field');  
         //browser.waitForAngular();  
     },
+
+    corporate_creds_cloud(){  
+        browser.get('https://test.fieldbuilder.ix3.com');  
+        //browser.waitForAngular();  
+    },
+
+    logout_cloud(){  
+        browser.get('https://test.fieldbuilder.ix3.com/oauth2/sign_out');    
+    },
       
     openField: function(item) {  
         var todo = this.toDo;   

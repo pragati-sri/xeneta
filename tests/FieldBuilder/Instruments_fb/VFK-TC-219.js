@@ -16,9 +16,10 @@ describe('VFK-TC-219', function(){
         instrument.createNewProfile();
         browser.sleep(2000);
         toDoPage.clickInstrument();
+        browser.sleep(2000);
         instrument.openMappings();
+        browser.sleep(2000);
         instrument.createNewMapping();
-        
-
+        browser.sleep(2000);
     });
 });

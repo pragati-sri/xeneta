@@ -9,7 +9,9 @@ describe('VFK-TC-212', function(){
      it('should check norwegian characters', function(){
         //selecting CDB template
         toDoPage.go();
+        browser.sleep(2000);
         toDoPage.openField();
+        browser.sleep(2000);
         //appends norwegian character to node name, then reverts changes
         semPage.editSemName();
         //apply for node name as well

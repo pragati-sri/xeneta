@@ -9,7 +9,9 @@ describe('VFK-TC-214', function(){
      it('should save CDB as template', function(){
         //selecting CDB template
         toDoPage.go();
+        browser.sleep(2000);
         toDoPage.openField();
+        browser.sleep(2000);
         //setCdbasTemplate saves template,checks new template, deletes template
         semPage.setCdbasTemplate(); 
 

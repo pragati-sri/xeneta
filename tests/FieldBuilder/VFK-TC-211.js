@@ -9,7 +9,9 @@ describe('VFK-TC-211', function(){
      it('should replace CDB', function(){
         //selecting CDB template
         toDoPage.go();
+        browser.sleep(2000);
         toDoPage.openField();
+        browser.sleep(2000);
         semPage.editCdbTemplate();
         //replacing CDB template and checking updated cdb details
         semPage.replaceCdbTemplate();

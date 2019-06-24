@@ -11,7 +11,7 @@ module.exports = {
         ok_button: element(by.id('confirmOkBtn')),
         submit_button: element(by.id('submit')),
         node_id: element(by.css('[key="Node id"]')),
-        users_list: element.all(by.css('[ng-repeat="user in nodeResource.vectus.users"]')),
+        users_list: element.all(by.css('[ng-repeat="user in currentNode.node.vectus.users"]')),
         SEM_edit: element(by.css('[title="Edit properties"]')),
         SEM_name: element(by.id('name')),
         SEM_SaveasTemplate: element(by.css('[fms-icon="copy"]')),

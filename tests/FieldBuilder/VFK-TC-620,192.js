@@ -5,12 +5,12 @@ describe('VFK-TC-620 and VFK-TC-192', function(){
    */
 
     it('should check ip address', function(){
-        browser.get('http://verif1:verifverif1@fieldbuilder-pt-vm1/fieldbuilder/static#/project/5c515fccfa628a038689a0de/field');
+        browser.get('https://verif1:verifverif1@fms.no.enterdir.com/fieldbuilder/static#/project/5b8668bfe22e8203b383237f/field');
         browser.sleep(2000);
         browser.driver.manage().window().maximize();
         element(by.css('[fms-icon="goto"]')).click();
         browser.sleep(2000);
-        element(by.id('5c517dadfa628a038689a39d_anchor')).click();
+        element(by.id('5bd9aff5e22e8203adf73612_anchor')).click();
         browser.sleep(2000);
         element(by.css('[fms-icon="edit"]')).click();
         browser.driver.sleep(20000);
