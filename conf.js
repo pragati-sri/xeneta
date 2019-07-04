@@ -26,7 +26,7 @@ exports.config ={
         }
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
-    /*suites: {
+    suites: {
         //for configApp
         Instruments: './tests/ConfigApp/Instruments/*.js',
         Users: './tests/ConfigApp/Users/*.js',
@@ -36,9 +36,9 @@ exports.config ={
         Instruments_fb: './tests/FieldBuilder/Instruments_fb/*.js',
         CDB_fb: './tests/FieldBuilder/CDB_fb/*.js',
         IntegratedConfigApp: './tests/FieldBuilder/IntegratedConfigApp/*.js',
-    },*/
+    },
     //specs: ['./tests/FieldBuilder/IntegratedConfigApp/VFK-TC-246.js'],
-    specs: ['./tests/FieldBuilder/Cloud_sanity_check/logins.js'],
+    //specs: ['./tests/FieldBuilder/Cloud_sanity_check/logins.js'],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){
