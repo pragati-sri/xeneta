@@ -17,9 +17,9 @@ module.exports = {
         browser.sleep(2000);
         login.fms_sem6_25.click();
         browser.sleep(2000);
-        login.username.click().sendKeys('Admin');
+        login.username.click().sendKeys('admin');
         browser.sleep(2000);
-        login.password.sendKeys('Admin1234').sendKeys(protractor.Key.ENTER);
+        login.password.sendKeys('Admin12345').sendKeys(protractor.Key.ENTER);
         browser.sleep(2000);
     },  
 
