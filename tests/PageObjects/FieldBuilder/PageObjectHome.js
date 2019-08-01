@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {  
     toDo: {  
-        clickField: element(by.css('[fms-icon="goto"]')),  
+        clickField: element.all(by.css('[fms-icon="goto"]')).get(1),  
         clickFieldName: element(by.cssContainingText('.ng-binding', 'Automation')),
         instruments: element(by.className('dropdown-toggle')),
         definitions: element(by.linkText('Definitions')),
@@ -19,6 +19,11 @@ module.exports = {
 
     go_pt: function() {  
         browser.get('http://pragati:pragati123@fieldbuilder-pt-vm1/fieldbuilder/static#/project/5b8668bfe22e8203b383237f/field');  
+        //browser.waitForAngular();  
+    },
+
+    go_cloud_pragatis_project: function() {  
+        browser.get('https://test.fieldbuilder.ix3.com/fieldbuilder/static#/project/5b8668bfe22e8203b383237f/field');  
         //browser.waitForAngular();  
     },
 

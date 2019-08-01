@@ -70,6 +70,7 @@ module.exports = {
         var field_elements = this.fieldElements;  
         field_elements.SEM_A.click();
         field_elements.SEM_SaveasTemplate.click();
+        browser.sleep(2000);
         field_elements.SEM_name.sendKeys('AAA_test_template');
         field_elements.submit_button.click();
         browser.sleep(2000);  

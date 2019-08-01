@@ -1,4 +1,5 @@
 var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
+var cloud = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectCloud'); 
 var semPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectSEM');
 
 describe('VFK-TC-214', function(){
@@ -8,7 +9,10 @@ describe('VFK-TC-214', function(){
  
      it('should save CDB as template', function(){
         //selecting CDB template
-        toDoPage.go();
+        browser.ignoreSynchronization = true;
+        toDoPage.go_cloud_pragatis_project();
+        browser.sleep(2000); 
+        cloud.login_corporate();
         browser.sleep(2000);
         toDoPage.openField();
         browser.sleep(2000);

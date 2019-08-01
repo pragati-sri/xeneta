@@ -7,6 +7,7 @@ module.exports = {
         submit_button: element(by.id('submit')),
         edit_button: element(by.css('[fms-icon="edit"]')),
         add_button: element(by.css('[fms-icon="add"]')),
+        delete_button: element.all(by.css('[fms-icon="delete"]')).last(),
     },
     mappingElements:{
         mappings: element(by.linkText('Mappings')),
@@ -27,8 +28,8 @@ module.exports = {
         id: element(by.id('vectusId')),
         description: element(by.css('[name="description"]')),
         definition: element(by.css('[name="definitionId"]')),
-        profile: element.all(by.css('[name="profileId"]')).last(),
-        protocol: element(by.css('[name="protocol"]')),
+        profile: element.all(by.cssContainingText('option', 'zzprofile1')),
+        protocol: element.all(by.cssContainingText('option', 'Siis Level 2')),
         name: element(by.css('[name="name"]')),
         type: element(by.css('[name="instrumentType"]')),
 
@@ -58,6 +59,10 @@ module.exports = {
     clickAdd: function(item) {  
         var instrument_buttons = this.instrumentButtons;
         instrument_buttons.add_button.click();
+    },
+    clickDelete: function(item) {  
+        var instrument_buttons = this.instrumentButtons;
+        instrument_buttons.delete_button.click();
     },
 
 
@@ -96,14 +101,25 @@ module.exports = {
     },
     createNewMapping: function(item) {    
         this.clickAdd();
-        this.dialogueBoxElements.id.sendKeys(1);
+        browser.sleep(2000);
+        this.dialogueBoxElements.id.sendKeys(11);
+        browser.sleep(2000);
         this.dialogueBoxElements.description.sendKeys('bla');
         browser.sleep(2000);
         this.dialogueBoxElements.definition.click().sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ENTER);
         browser.sleep(2000);
         this.dialogueBoxElements.profile.click();
         browser.sleep(2000);
-        //this.clickSubmit();
+        this.dialogueBoxElements.protocol.click();
+        browser.sleep(2000);
+        this.clickSubmit();
+        //check new mapping is listed
+        browser.sleep(3000);
+        expect(element(by.cssContainingText('.ng-binding.ng-scope', 'zzprofile1 for test_defination_change [11]')).isPresent()).toBe(true);
+    },
+    deleteMapping: function(item) {  
+        this.clickDelete();
+        this.clickOk();
     },
 
 //definition functions
@@ -136,11 +152,22 @@ module.exports = {
     },
     createNewProfile: function(item) {  
         this.clickAdd();
+        browser.sleep(1000);
         this.dialogueBoxElements.id.sendKeys(1);
-        this.dialogueBoxElements.name.sendKeys('profile1');
+        browser.sleep(1000);
+        this.dialogueBoxElements.name.sendKeys('zzprofile1');
+        browser.sleep(1000);
         this.dialogueBoxElements.type.click().sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ENTER);
+        browser.sleep(1000);
         this.dialogueBoxElements.description.sendKeys('bla');
         this.clickSubmit();
+        //check new profile is listed.
+        browser.sleep(3000);
+        expect(element(by.cssContainingText('.ng-binding', 'zzprofile1 [1]')).isDisplayed()).toBe(true);
+    },
 
+    deleteProfile: function(item) {  
+        this.clickDelete();
+        this.clickOk();
     },
 };
