@@ -14,7 +14,7 @@ describe('VFK-TC-214', function(){
         browser.sleep(2000); 
         cloud.login_corporate();
         browser.sleep(2000);
-        toDoPage.openField();
+        toDoPage.openField_admin();
         browser.sleep(2000);
         //setCdbasTemplate saves template,checks new template, deletes template
         semPage.setCdbasTemplate(); 

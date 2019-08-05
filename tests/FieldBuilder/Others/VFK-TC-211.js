@@ -1,5 +1,6 @@
 var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
 var semPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectSEM');
+var cloud = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectCloud');
 
 describe('VFK-TC-211', function(){
     /*
@@ -8,9 +9,12 @@ describe('VFK-TC-211', function(){
  
      it('should replace CDB', function(){
         //selecting CDB template
-        toDoPage.go();
+        browser.ignoreSynchronization = true;
+        toDoPage.go_cloud_pragatis_project();
+        browser.sleep(2000); 
+        cloud.login_corporate();
         browser.sleep(2000);
-        toDoPage.openField();
+        toDoPage.openField_admin();
         browser.sleep(2000);
         semPage.editCdbTemplate();
         //replacing CDB template and checking updated cdb details

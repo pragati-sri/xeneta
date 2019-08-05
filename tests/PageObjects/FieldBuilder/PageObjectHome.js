@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {  
     toDo: {  
-        clickField: element.all(by.css('[fms-icon="goto"]')).get(1),  
+        clickField: element.all(by.css('[fms-icon="goto"]')),  
         clickFieldName: element(by.cssContainingText('.ng-binding', 'Automation')),
         instruments: element(by.className('dropdown-toggle')),
         definitions: element(by.linkText('Definitions')),
@@ -36,9 +36,13 @@ module.exports = {
         browser.get('https://test.fieldbuilder.ix3.com/oauth2/sign_out');    
     },
       
-    openField: function(item) {  
+    openField_admin: function(item) {  
         var todo = this.toDo;   
-        todo.clickField.click();  
+        todo.clickField.get(0).click();  
+    },  
+    openField_user: function(item) {  
+        var todo = this.toDo;   
+        todo.clickField.get(1).click();  
     },  
 
     clickFieldName: function(item) {  

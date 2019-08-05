@@ -15,7 +15,7 @@ describe('VFK-TC-246', function(){
         browser.sleep(2000); 
         cloud.login_corporate();
         browser.sleep(2000);
-        toDoPage.openField();
+        toDoPage.openField_admin();
         browser.sleep(2000);
         semPage.clickSem_A();
         browser.sleep(2000);

@@ -2,7 +2,7 @@
 module.exports = {  
     fieldElements:{
         SEM_rep_cdb: element(by.linkText('rep_cdb')),
-        SEM_A: element(by.id('5bd9aff5e22e8203adf73612_anchor')),
+        SEM_A: element(by.id('5d429f2e17c42a0001a9046f_anchor')),
         replace_cdb: element.all(by.css('[fms-icon="replace"]')).get(1),
         select_from_template: element(by.linkText('Select from templates')),
         template_list: element(by.id('cdbSelect')),
@@ -47,23 +47,33 @@ module.exports = {
         field_elements.template_list.click().sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ENTER);
         field_elements.save_cdb.click();
         field_elements.ok_button.click();
+        browser.sleep(2000);
         //check cdb details after replacing cdb
         expect(field_elements.node_id.getText()).toContain('XT_1_SCM_SEM_A');
+        browser.sleep(2000);
         expect(field_elements.users_list.count()).toBe(4);
+        browser.sleep(2000);
     },
     editSemName: function(item) {  
         var field_elements = this.fieldElements;  
+        field_elements.SEM_A.click();
         browser.actions().click(field_elements.SEM_A, protractor.Button.RIGHT).perform();
         field_elements.SEM_edit.click();
+        browser.sleep(2000);
         field_elements.SEM_name.sendKeys('ø');
         field_elements.submit_button.click();
+        browser.sleep(2000);
         //check name is changed correctly
         browser.refresh();
+        browser.sleep(2000);
         expect(field_elements.SEM_A.getText()).toContain('ø');
         //change name back to SEM_A
         browser.actions().click(field_elements.SEM_A, protractor.Button.RIGHT).perform();
+        browser.sleep(2000);
         field_elements.SEM_edit.click();
+        browser.sleep(2000);
         field_elements.SEM_name.clear().sendKeys('SEM_A');
+        browser.sleep(2000);
         field_elements.submit_button.click();  
     },
     setCdbasTemplate: function(item) {  

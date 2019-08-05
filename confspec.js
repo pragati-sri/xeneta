@@ -28,7 +28,7 @@ exports.config ={
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
     //specs: ['./tests/ConfigApp/Users/VFK-TC-70.js'],
-    specs: ['./tests/FieldBuilder/Instruments_fb/VFK-TC-219.js'],
+    specs: ['./tests/FieldBuilder/Others/VFK-TC-619.js'],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){

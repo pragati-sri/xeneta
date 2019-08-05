@@ -1,5 +1,6 @@
 var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
 var instrumentPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectIstruments');
+var cloud = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectCloud');
 
 describe('VFK-TC-619', function(){
     /*
@@ -8,7 +9,11 @@ describe('VFK-TC-619', function(){
 
      it('should edit instrument names', function(){
          //checking definition names
-        toDoPage.go();
+         browser.ignoreSynchronization = true;
+         toDoPage.go_cloud_pragatis_project();
+         browser.sleep(2000); 
+         cloud.login_fbuser();
+         browser.sleep(2000);
         toDoPage.clickInstrument();
         instrumentPage.changeDefinitionName();
         def_name = element(by.model('model[\'name\']'));
