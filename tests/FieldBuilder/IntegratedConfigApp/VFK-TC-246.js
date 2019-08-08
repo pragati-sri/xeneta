@@ -13,13 +13,15 @@ describe('VFK-TC-246', function(){
         browser.ignoreSynchronization = true;
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.openField_admin();
         browser.sleep(2000);
         semPage.clickSem_A();
         browser.sleep(2000);
         semPage.clickEditCdb();
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
         browser.sleep(2000);
 
     });

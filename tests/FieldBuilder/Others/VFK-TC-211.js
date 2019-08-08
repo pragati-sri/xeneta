@@ -12,13 +12,17 @@ describe('VFK-TC-211', function(){
         browser.ignoreSynchronization = true;
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.openField_admin();
         browser.sleep(2000);
         semPage.editCdbTemplate();
+        browser.sleep(2000);
         //replacing CDB template and checking updated cdb details
         semPage.replaceCdbTemplate();
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
+        browser.sleep(2000);
 
     });
 });

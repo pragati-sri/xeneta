@@ -12,7 +12,7 @@ describe('VFK-TC-203', function(){
         browser.ignoreSynchronization = true;
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.openField_admin();
         browser.sleep(2000);
@@ -24,6 +24,9 @@ describe('VFK-TC-203', function(){
         browser.sleep(2000);
         //remove warning for next test run
         semPage.warningTeardown();
+        browser.sleep(2000);
+        //logout
+        toDoPage.logout_cloud();
         browser.sleep(2000);
     });
 });

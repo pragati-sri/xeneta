@@ -1,7 +1,7 @@
 var toDoPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectHome'); 
 var cloud = require('c:/Verification/practice protractor_21feb/tests/PageObjects/FieldBuilder/PageObjectCloud'); 
 
-describe('VFK-TC-NA', function(){
+describe('VFK-TC-cloudLogin', function(){
     /*
     Checking login/logout for fieldbuilder deployed on cloud  
     */
@@ -25,5 +25,7 @@ describe('VFK-TC-NA', function(){
         //fbadmin login
         cloud.login_fbadmin();
         browser.sleep(2000);
+        toDoPage.logout_cloud();
+        browser.sleep(3000);
     });
 });

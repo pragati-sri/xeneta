@@ -6,6 +6,7 @@ module.exports = {
         replace_cdb: element.all(by.css('[fms-icon="replace"]')).get(1),
         select_from_template: element(by.linkText('Select from templates')),
         template_list: element(by.id('cdbSelect')),
+        node_id: element(by.id('Node_anchor')),
         save_cdb: element.all(by.css('[ng-click="cdbCtrl.setCdbFromTemplate()"]')),
         reset_button: element(by.css('[ng-click="resetMap()"]')),
         ok_button: element(by.id('confirmOkBtn')),
@@ -112,5 +113,8 @@ module.exports = {
     clickEditCdb: function(item) {  
         var field_elements = this.fieldElements;
         field_elements.edit_cdb_button.click();
+        var EC = protractor.ExpectedConditions;
+        var isClicakble = EC.elementToBeClickable(field_elements.node_id);
+        browser.wait(isClicakble, 5000);
     },
 };

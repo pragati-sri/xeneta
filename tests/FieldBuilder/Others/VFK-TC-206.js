@@ -45,5 +45,10 @@ describe('VFK-TC-206', function(){
         //check empty reset command field
         instrumentPage.clearResetCommand();
         expect(reset_command.getAttribute('value')).toEqual('');
+
+        //logout
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
+        browser.sleep(2000);
     });
 });

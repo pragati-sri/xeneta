@@ -67,6 +67,8 @@ describe('VFK-TC-184 & VFK-TC-185', function(){
         //check warning when no scan group present
         var warning = element.all(by.css('[fms-icon="warn"]')).get(1);
         expect(warning.isPresent()).toBe(true);
-        
+        browser.sleep(2000);
+        browser.get('https://test.fieldbuilder.ix3.com/oauth2/sign_out');
+        browser.sleep(2000);
     });
 });

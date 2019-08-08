@@ -27,8 +27,32 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
-    //specs: ['./tests/ConfigApp/Users/VFK-TC-70.js'],
-    specs: ['./tests/FieldBuilder/Others/VFK-TC-619.js'],
+    //specs: ['./tests/FieldBuilder/Instruments_fb/VFK-TC-219.js'],
+    specs: [
+            //fieldBuilder
+            /*'./tests/FieldBuilder/Cloud_sanity_check/logins.js',
+            './tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
+            './tests/FieldBuilder/Instruments_fb/VFK-TC-219.js',
+            './tests/FieldBuilder/IntegratedConfigApp/VFK-TC-246.js',
+            './tests/FieldBuilder/Others/VFK-TC-184,185.js',
+            './tests/FieldBuilder/Others/VFK-TC-203.js',
+            './tests/FieldBuilder/Others/VFK-TC-206.js',
+            './tests/FieldBuilder/Others/VFK-TC-211.js',
+            './tests/FieldBuilder/Others/VFK-TC-212.js',*/
+            //configApp
+            //'./tests/ConfigApp/CDBManagement/VFK-TC-49,50.js',
+            './tests/ConfigApp/CDBManagement/VFK-TC-56.js',
+            './tests/ConfigApp/CDBManagement/VFK-TC-58,60.js',
+            './tests/ConfigApp/Instruments/VFK-TC-38.js',
+            './tests/ConfigApp/Others/VFK-TC-120.js',
+            //'./tests/ConfigApp/Others/VFK-TC-121.js',
+            './tests/ConfigApp/Users/VFK-TC-66.js',
+            './tests/ConfigApp/Users/VFK-TC-67.js',
+            './tests/ConfigApp/Users/VFK-TC-68.js',
+            './tests/ConfigApp/Users/VFK-TC-69.js',
+            './tests/ConfigApp/Users/VFK-TC-70.js',
+            './tests/ConfigApp/Users/VFK-TC-72,74,77,78.js',
+            ],
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
     onPrepare: function(){
@@ -51,6 +75,6 @@ exports.config ={
         browser.driver.manage().window().maximize();
     },
     //to synchronise and avoid timeout error
-    jasmineNodeOpts:{defaultTimeoutInterval: 500000} 
+    jasmineNodeOpts:{defaultTimeoutInterval: 500000},
     
 };

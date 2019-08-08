@@ -12,13 +12,17 @@ describe('VFK-TC-212', function(){
         browser.ignoreSynchronization = true;
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.openField_admin();
         browser.sleep(2000);
         //appends norwegian character to node name, then reverts changes
         semPage.editSemName();
         //apply for node name as well
+        browser.sleep(2000);
+        //logout
+        toDoPage.logout_cloud();
+        browser.sleep(2000);
         
 
     });

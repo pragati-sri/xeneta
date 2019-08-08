@@ -10,14 +10,17 @@ describe('VFK-TC-214', function(){
      it('should save CDB as template', function(){
         //selecting CDB template
         browser.ignoreSynchronization = true;
+        browser.sleep(3000);
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.openField_admin();
         browser.sleep(2000);
         //setCdbasTemplate saves template,checks new template, deletes template
         semPage.setCdbasTemplate(); 
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
 
     });
 });

@@ -12,7 +12,7 @@ describe('VFK-TC-219', function(){
         browser.ignoreSynchronization = true;
         toDoPage.go_cloud_pragatis_project();
         browser.sleep(2000); 
-        cloud.login_corporate();
+        cloud.login_fbadmin();
         browser.sleep(2000);
         toDoPage.clickInstrument();
         browser.sleep(2000);
@@ -31,7 +31,10 @@ describe('VFK-TC-219', function(){
         toDoPage.clickInstrument();
         browser.sleep(2000);
         instrument.openProfiles();
-        browser.sleep(2000);
+        browser.sleep(2000);                       
         instrument.deleteProfile();
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
+        browser.sleep(2000);
     });
 });
