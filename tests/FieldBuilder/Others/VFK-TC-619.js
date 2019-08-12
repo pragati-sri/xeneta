@@ -16,6 +16,7 @@ describe('VFK-TC-619', function(){
          browser.sleep(2000);
         toDoPage.clickInstrument();
         instrumentPage.changeDefinitionName();
+        browser.sleep(2000);
         def_name = element(by.model('model[\'name\']'));
         def_name.clear();
         //generate a random name
@@ -24,6 +25,7 @@ describe('VFK-TC-619', function(){
         def_name.sendKeys(random);
         browser.sleep(2000);
         instrumentPage.clickSubmit();
+        browser.sleep(3000);
         //verify update
         var edited_name = element(by.css('[class="ng-binding ng-scope"]')).getText();
         expect(edited_name).toEqual(random);
@@ -44,6 +46,7 @@ describe('VFK-TC-619', function(){
         browser.sleep(2000);
         instrumentPage.clickSubmit();
         browser.driver.navigate().refresh();
+        browser.sleep(3000);
         //verify update
         expect(element(by.tagName('strong')).getText()).toBe(random+' [SAND]');
 
@@ -70,5 +73,8 @@ describe('VFK-TC-619', function(){
         browser.sleep(2000);
         //verify update
         expect(element(by.tagName('strong')).getText()).toContain(random);
+        browser.sleep(2000);
+        toDoPage.logout_cloud();
+        browser.sleep(2000);
     });
 });

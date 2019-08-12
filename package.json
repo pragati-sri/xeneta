@@ -21,5 +21,9 @@
     "e2e": "protractor"
   },
   "author": "pragati",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "protractor-beautiful-reporter": "^1.2.8",
+    "protractor-pretty-html-reporter": "0.0.16"
+  }
 }
