@@ -31,8 +31,8 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
-    //specs: ['./tests/ConfigApp/CDBManagement/VFK-TC-49,50.js',],
-    specs: [
+    specs: ['./tests/ConfigApp/NodeManagement/VFK-TC-81,235.js',],
+    /*specs: [
             //fieldBuilder
             './tests/FieldBuilder/Cloud_sanity_check/logins.js',
             './tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
@@ -58,7 +58,7 @@ exports.config ={
             './tests/ConfigApp/Users/VFK-TC-69.js',
             './tests/ConfigApp/Users/VFK-TC-70.js',
             './tests/ConfigApp/Users/VFK-TC-72,74,77,78.js',
-    ],
+    ],*/
     //allScriptsTimeout: 200000,
     //framework: 'jasmine',
 
@@ -93,7 +93,8 @@ exports.config ={
                     displayBrowser:false,
                     displaySessionId:false,
                     displayOS:false,
-                    inlineScreenshots:false
+                    inlineScreenshots:true,
+                    useAjax:true
                 }
             }
          }).getJasmine2Reporter());

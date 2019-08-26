@@ -1,0 +1,25 @@
+[
+{
+    "action": "create",
+    "parentOid": {"className": "Instruments", "instanceId": "1"},
+    "oid": {"className": "Instrument", "instanceId": "0"},
+    "attributes": {
+      "id": "B-INSTR", "description": "Batch create instrument", "administrativeState": "OUT_OF_SERVICE",
+      "startUpMasteringState": "DISABLED", "protocol": "CANOPEN", "remoteInterface": "CAN_INTERFACE",
+      "instrumentProfileFile": "ObjectId[InstrumentProfileFile,6]", "instrumentMapFile": "ObjectId[InstrumentMapFile,4]"
+    }
+  },
+ {
+    "action": "modify",
+    "oid": {"className": "InstrumentTemperature", "instanceId": "2"},
+    "attributes": {"description": "External Temperature Modified"}
+  },
+  {
+    "action": "delete",
+    "oid": {"className": "InstrumentProfileFile", "instanceId": "1"}
+  },
+  {
+    "action": "delete",
+    "oid": {"className": "InstrumentMapFile", "instanceId": "1"}
+  };
+];

@@ -3,12 +3,22 @@ module.exports = {
     nodeElements: {  
         vectus: element(by.id('Vectus_anchor')),
         node: element(by.id('Node_anchor')),
+        root_attr: element.all(by.className('show-hidden-on-hover ng-binding ng-scope')),
+        goToParentRoot: element(by.css('[disabled="!resourceWrapper.$hasParent()"]')),
+        goToParent: element(by.css('[fms-icon="up"]')),
+        vectusList: element(by.linkText('Vectus list')),
+        relation: element.all(by.css('[ng-repeat="aggregation in resourceWrapper.$singleAggregations() |orderBy:\'title\'"]')),
+        mgmtProtocols: element(by.linkText('ManagementProtocols')),
+        relations_tab: element(by.cssContainingText('.pull-left.panel-title', 'Relations')),
+        scmp: element(by.linkText('Scmp')),
+        rootDescription: element(by.css('[name="description"]')),
+        rootDescriptionValue: element(by.css('[ng-if="prop.schema.type!=\'linked\'"]')),
     },
 
     communicationElements: {  
         communication: element(by.id('Communication_anchor')),
         communication_engine: element(by.buttonText('CommunicationEngine')),
-        router: element(by.linkText('Router')),
+        router: browser.element(by.css('[ng-click="followSingleAggregation(aggregation)"]')),
         arp: element(by.linkText('Arp')),
         static_arp_button: element(by.buttonText('StaticArp')),
         //static_arp_instance: element(by.css('[ng-class="{active: tableConfig.select.map[instance.id]}"]')),
@@ -17,15 +27,17 @@ module.exports = {
 
     faultManagementElements: {  
         fault_management: element(by.linkText('FaultManagement')),
-        notif_subscriber_button: element(by.buttonText('NotificationSubscriber'))
+        notif_subscriber_button: element(by.buttonText('NotificationSubscriber')),
     },
 
     buttons: {  
         add_button: element(by.css('[fms-icon="add"]')),
         cancel_button: element(by.buttonText('Cancel')),
         submit_button: element(by.buttonText('Submit')),
-        navigate_to: element.all(by.css('[fms-icon="goto"]')).last(),
+        save_button: element(by.buttonText('Save')),
+        navigate_to: element.all(by.css('[fms-icon="goto"]')),
         delete_button: element(by.css('[fms-icon="delete"]')),
+        edit_button: element(by.css('[fms-icon="edit"]')),
         ok_button: element(by.id('confirmOkBtn')),
     },
 
@@ -52,12 +64,19 @@ module.exports = {
         button_ele.submit_button.click();
     },
 
+    clickSaveButton: function(){
+        var button_ele = this.buttons;
+        button_ele.save_button.click();
+    },
+
     clickDeleteButton: function(){
         var button_ele = this.buttons;
         button_ele.delete_button.click();
     },
-
-
+    clickEditButton: function(){
+        var button_ele = this.buttons;
+        button_ele.edit_button.click();
+    },
     clickNavigateTo: function(){
         var button_ele = this.buttons;
         button_ele.navigate_to.click();
@@ -103,7 +122,7 @@ module.exports = {
         communication_ele.communication_engine.click();
         browser.sleep(2000);
         this.clickNavigateTo();
-        browser.sleep(2000);
+        browser.sleep(4000);
         communication_ele.router.click();
         browser.sleep(2000);
         communication_ele.arp.click();
@@ -137,4 +156,74 @@ module.exports = {
         this.clickOkButton();
         browser.sleep(2000);
     },
+
+    //ASIM browsing
+    RootAttributesPresent: function() {
+        var node_ele = this.nodeElements;
+        var items = ['description','name','type'];
+        for(var i=0; i<3; i++){
+            expect(node_ele.root_attr.get(i).getText()).toBe(items[i]);
+        }  
+    },
+        
+    RootChildAggregations: function() {
+        var node_ele = this.nodeElements;
+        var items = ['Communication','Connections','Em','Instruments','ManagementProtocols','Node','Process'];
+        //var items1= [];
+        for(var i=0; i<7; i++){
+            //items1.push(node_ele.relation.get(i).getText());
+            expect(node_ele.relation.get(i).getText()).toBe(items[i]);
+        }  
+    },
+
+    RootCheckParentLink: function() {
+        var node_ele = this.nodeElements;
+        expect(node_ele.goToParentRoot.isPresent()).toBe(true);
+    },
+
+    CheckVectusList: function() {
+        var node_ele = this.nodeElements;
+        expect(node_ele.vectusList.isPresent()).toBe(true);
+    },
+    NavigateManagementProtocols: function() {
+        var node_ele = this.nodeElements;
+        node_ele.mgmtProtocols.click();
+        browser.sleep(2000);
+        expect(node_ele.relations_tab.isPresent()).toBe(true);
+        browser.sleep(2000);
+    },
+    NavigateScmp: function() {
+        var node_ele = this.nodeElements;
+        node_ele.scmp.click();
+        browser.sleep(2000);
+        expect(node_ele.relations_tab.isDisplayed()).toBe(false);
+        browser.sleep(2000);
+        var items = ['scmpVersion','nbrActiveConnections','nbrSupportedConnections','qosSetting','discoveryPort','managementPort'];
+        for(var i=0; i<6; i++){
+            expect(node_ele.root_attr.get(i).getText()).toBe(items[i]);
+        }  
+    },
+    GoToParent: function() {
+        var node_ele = this.nodeElements;
+        node_ele.goToParent.click();
+        browser.sleep(2000);
+    },
+    EmptyStringAttribute: function() {
+        var node_ele = this.nodeElements;
+        this.clickEditButton();
+        browser.sleep(2000);
+        node_ele.rootDescription.clear();
+        this.clickSaveButton();
+        browser.sleep(2000);
+        //check description field is empty
+        expect(node_ele.rootDescriptionValue.getText()).toEqual('');
+        //repopulate description
+        browser.sleep(2000);
+        this.clickEditButton();
+        node_ele.rootDescription.sendKeys('PT FMS2.2');
+        browser.sleep(2000);
+        this.clickSaveButton();
+        browser.sleep(2000);
+    },
+
 };

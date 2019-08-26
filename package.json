@@ -6,14 +6,16 @@
   "dependencies": {
     "grunt": "^1.0.4",
     "grunt-cli": "^1.3.2",
+    "i": "^0.3.6",
     "jasmine": "^3.3.0",
     "jasmine-spec-reporter": "^4.2.1",
-    "protractor": "^5.4.1",
     "protractor-hotkeys": "0.0.5",
     "protractor-html-screenshot-reporter": "0.0.21",
     "protractor-jasmine2-html-reporter": "0.0.7",
     "randomstring": "^1.1.5",
-    "robotjs": "^0.5.1"
+    "robotjs": "^0.5.1",
+    "webdriver-manager": "^13.0.0",
+    "webdriver-manager-replacement": "^2.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

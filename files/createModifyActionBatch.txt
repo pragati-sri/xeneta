@@ -1,0 +1,25 @@
+[
+  {
+    "action": "create",
+    "parentOid": {"className": "FaultManagement", "instanceId": "1"},
+    "oid": {"className": "NotificationSubscriber", "instanceId": "0"},
+    "attributes": {"ipAddress": "1.2.3.4", "port": "1234", "description": "First batch create"}
+  },
+  {
+    "action": "create",
+    "parentOid": {"className": "FaultManagement", "instanceId": "1"},
+    "oid": {"className": "NotificationSubscriber", "instanceId": "0"},
+    "attributes": {"ipAddress": "1.2.3.5", "port": "1235", "description": "Second batch create"}
+  },
+  {
+    "action": "create",
+    "parentOid": {"className": "FaultManagement", "instanceId": "1"},
+    "oid": {"className": "NotificationSubscriber", "instanceId": "0"},
+    "attributes": {"ipAddress": "1.2.3.6", "port": "1236", "description": "Third batch create"}
+  },
+  {
+    "action": "modify",
+    "oid": {"className": "NotificationSubscriber", "instanceId": "3"},
+    "attributes": {"description": "Modified Third Batch"}
+  }
+]

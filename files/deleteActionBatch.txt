@@ -1,0 +1,14 @@
+[
+  {
+    "action": "delete",
+    "oid": {"className": "NotificationSubscriber", "instanceId": "1"}
+  },
+  {
+    "action": "delete",
+    "oid": {"className": "NotificationSubscriber", "instanceId": "2"}
+  },
+  {
+    "action": "delete",
+    "oid": {"className": "NotificationSubscriber", "instanceId": "3"}
+  }
+]
