@@ -5,7 +5,7 @@ module.exports = {
     CDB_management: {    
         CDB_tab: element(by.linkText('CDB Management')),
         Uncommited_cdb: element(by.cssContainingText('.ng-binding', 'UNCOMMITTED')),
-        Commit_cdb: element(by.className('glyphicon glyphicon-floppy-save')),
+        Commit_cdb: element(by.className('fas fa-save')),
         Commited_cdb: element(by.cssContainingText('.ng-binding', 'COMMITTED')),
     }, 
 
@@ -15,17 +15,17 @@ module.exports = {
     },
 
     running_CDB: {   
-        filesize: element.all(by.className('clearfix ng-binding')).first(),
-        status_stable: element.all(by.className('clearfix ng-binding')).get(1),
-        modified: element.all(by.className('clearfix ng-binding')).get(2),
-        fingerprint: element.all(by.className('clearfix ng-binding')).get(3),
+        filesize: element.all(by.className('col-sm-8 ng-binding')).first(),
+        status_stable: element.all(by.className('col-sm-8 ng-binding')).get(1),
+        modified: element.all(by.className('col-sm-8 ng-binding')).get(2),
+        fingerprint: element.all(by.className('col-sm-8 ng-binding')).get(3),
     },
 
     restore_CDB: {    
         restore_radio: element.all(by.css('[type="radio"]')),
-        status_empty: element.all(by.tagName('em')),
-        filesize: element.all(by.className('clearfix ng-binding')).get(5),
-        status_stable: element.all(by.className('clearfix ng-binding')).get(6),
+        status_empty: element.all(by.className('col-sm-8')),
+        filesize: element.all(by.className('col-sm-8 ng-binding')).get(5),
+        status_stable: element.all(by.className('col-sm-8 ng-binding')).get(6),
     },
 
     project_default_CDB: {    
@@ -38,9 +38,9 @@ module.exports = {
 
     standby_CDB: {    
         standby_radio: element.all(by.css('[type="radio"]')).get(1),
-        status_empty: element.all(by.tagName('em')).last(),
-        filesize: element.all(by.className('clearfix ng-binding')).get(5),
-        status_stable: element.all(by.className('clearfix ng-binding')).get(6),
+        status_empty: element.all(by.className('col-sm-8')).last(),
+        filesize: element.all(by.className('col-sm-8 ng-binding')).get(0),
+        status_stable: element.all(by.className('col-sm-8 ng-binding')).get(6),
     },
 
     buttons: {  

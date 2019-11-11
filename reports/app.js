@@ -249,28 +249,76 @@ app.controller('ScreenshotReportController', function ($scope, $http) {
 
     var results = [
     {
-        "description": "should browse ASIM|VFK-TC-81,235",
+        "description": "should upload instrument profile|VFK-TC-38",
         "passed": true,
         "pending": false,
         "os": "Windows NT",
-        "instanceId": 15984,
+        "instanceId": 700,
         "browser": {
             "name": "chrome",
-            "version": "76.0.3809.100"
+            "version": "78.0.3904.97"
         },
         "message": "Passed.",
         "trace": "",
         "browserLogs": [
             {
-                "level": "WARNING",
-                "message": "https://pragati:Pragati1410*@fbu-lab1.no.enterdir.com/vectus-configapp-1-4/assets/standalone/ng-app-b1dd9d830343dd1ae245c156dde9f04e.js 1169 document.registerElement is deprecated and will be removed in M80, around February 2020. Please use window.customElements.define instead. See https://www.chromestatus.com/features/4642138092470272 and https://developers.google.com/web/updates/2019/07/web-components-time-to-upgrade for more details.",
-                "timestamp": 1566820299336,
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454953202,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454955299,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454955299,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454961535,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454963649,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573454994859,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/vectus-configapp/api/instrument/profile - Failed to load resource: the server responded with a status of 500 ()",
+                "timestamp": 1573455017711,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573455021896,
+                "type": ""
+            },
+            {
+                "level": "SEVERE",
+                "message": "https://fms.no.enterdir.com/favicon.ico - Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+                "timestamp": 1573455024111,
                 "type": ""
             }
         ],
-        "screenShotFile": "images\\002c00cb-006f-00ab-00cf-00de007e008f.png",
-        "timestamp": 1566820298804,
-        "duration": 43796
+        "screenShotFile": "images\\00f5008f-00ab-004e-00a4-004c00380093.png",
+        "timestamp": 1573454950524,
+        "duration": 73603
     }
 ];
 

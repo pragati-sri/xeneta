@@ -2,16 +2,17 @@
 module.exports = {  
     login: {  
         fms_sem6_25: element(by.cssContainingText('.ng-binding', 'fms-sem6-25')),  
-        username: element(by.css('[placeholder="Enter Username"]')),
-        password: element(by.css('[placeholder="Enter Password"]')),
+        username: element(by.id('username')),
+        password: element(by.id('password')),
+        fms_sem6_01: element(), 
     },  
 
     logout: {
-        logout_button: element(by.css('[tooltip="Logout"]')),
+        logout_button: element(by.css('[fms-icon="logout"]')),
     },
 
     vectusLogin: function() {  
-        browser.get('https://pragati:Pragati1410*@fbu-lab1.no.enterdir.com/vectus-configapp-1-4/static#/network/nodes');  
+        browser.get('https://fms.no.enterdir.com/vectus-configapp/static#/network/nodes');  
         //browser.waitForAngular();  
         var login = this.login;  
         browser.sleep(2000);
@@ -23,13 +24,19 @@ module.exports = {
         browser.sleep(2000);
     },  
 
+    vectusSelect: function() {  
+        browser.get('https://pragati:Pragati1410*@fbu-lab1.no.enterdir.com/vectus-configapp-1-4/static#/network/nodes');  
+        //browser.waitForAngular();  
+        browser.sleep(2000);
+    },  
+
     vectusLogout: function() {   
         var logout = this.logout;  
         logout.logout_button.click();
     },  
 
     invalidLogin: function() {  
-        browser.get('https://pragati:Pragati1410*@fbu-lab1.no.enterdir.com/vectus-configapp-1-4/static#/network/nodes');  
+        browser.get('https://fms.no.enterdir.com/vectus-configapp/static#/network/nodes');  
         //browser.waitForAngular();  
         var login = this.login;  
         browser.sleep(2000);

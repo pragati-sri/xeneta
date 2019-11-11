@@ -25,13 +25,13 @@ module.exports = {
     },
     //when creating a new profile/definition/mapping
     dialogueBoxElements:{
-        id: element(by.id('vectusId')),
-        description: element(by.css('[name="description"]')),
-        definition: element(by.css('[name="definitionId"]')),
+        id: element(by.id('fbFormsNormalForm-vectusId')),
+        description: element(by.css('[name="fbFormsNormalForm-description"]')),
+        definition: element(by.id('fbFormsNormalForm-definitionId')),
         profile: element.all(by.cssContainingText('option', 'zzprofile1')),
         protocol: element.all(by.cssContainingText('option', 'Siis Level 2')),
-        name: element(by.css('[name="name"]')),
-        type: element(by.css('[name="instrumentType"]')),
+        name: element(by.id('fbFormsNormalForm-name')),
+        type: element(by.css('[name="fbFormsNormalForm-instrumentType"]')),
 
     },
 
@@ -115,7 +115,7 @@ module.exports = {
         this.clickSubmit();
         //check new mapping is listed
         browser.sleep(3000);
-        expect(element(by.cssContainingText('.ng-binding.ng-scope', 'zzprofile1 for test_defination_change [11]')).isPresent()).toBe(true);
+        expect(element(by.cssContainingText('.ng-binding.ng-scope', 'zzprofile1')).isPresent()).toBe(true);
     },
     deleteMapping: function(item) {  
         this.clickDelete();

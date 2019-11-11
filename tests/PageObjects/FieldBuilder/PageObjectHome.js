@@ -27,6 +27,11 @@ module.exports = {
         //browser.waitForAngular();  
     },
 
+    go_clouddev_openforall_project: function() {  
+        browser.get('https://dev.fieldbuilder.ix3.com/fieldbuilder/static#/project/5836d96541c8d20b0fbf76a9/field');  
+        //browser.waitForAngular();  
+    },
+
     corporate_creds_cloud(){  
         browser.get('https://test.fieldbuilder.ix3.com');  
         //browser.waitForAngular();  

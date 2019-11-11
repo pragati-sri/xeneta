@@ -21,8 +21,9 @@ describe('VFK-TC-184 & VFK-TC-185', function(){
         element(by.linkText('Mappings')).click();
         browser.sleep(2000);
         element(by.tagName('em')).click();
-        browser.sleep(2000);
-        element.all(by.tagName('tab-heading')).get(3).click();
+        browser.sleep(3000);
+        //element.all(by.tagName('tab-heading')).get(3).click();
+        element.all(by.className('uib-tab nav-item ng-scope ng-isolate-scope')).get(3).click();
         browser.sleep(2000);
         element.all(by.tagName('mapping-scan-group-add-btn')).click();
         browser.sleep(2000);
@@ -36,6 +37,7 @@ describe('VFK-TC-184 & VFK-TC-185', function(){
         browser.sleep(2000);
         element(by.css('[ng-click="saveMap()"]')).click();
         browser.sleep(4000);
+
 
         //Checking scan group in xml mapping
         //element(by.css('[fms-icon="view"]')).click();
@@ -51,16 +53,20 @@ describe('VFK-TC-184 & VFK-TC-185', function(){
         //check reset button is working 
         //element.all(by.tagName('tab-heading')).get(3).click();
         element(by.xpath('//*[@id="mappingContentFormId"]/div[1]/div/div[4]/mapping-scan-group/fieldset/mapping-scan-group-modbus/div/table/tbody/tr/td[1]/mapping-scan-group-delete-btn/fms-icon-button/div/button/span')).click();
-        browser.sleep(2000);
+        browser.sleep(4000);
         element(by.css('[ng-click="resetMap()"]')).click();
+        browser.sleep(4000);
         element(by.css('[ng-click="ok()"]')).click();
+        browser.sleep(4000);
         var scan_group = element(by.css('[ng-model="group.start"]'));
         expect(scan_group.isPresent()).toBe(true);
         browser.sleep(2000);
 
         //check save button is working
         element(by.xpath('//*[@id="mappingContentFormId"]/div[1]/div/div[4]/mapping-scan-group/fieldset/mapping-scan-group-modbus/div/table/tbody/tr/td[1]/mapping-scan-group-delete-btn/fms-icon-button/div/button/span')).click();
+        browser.sleep(2000);
         element(by.css('[ng-click="saveMap()"]')).click();
+        browser.sleep(2000);
         expect(scan_group.isPresent()).toBe(false);
         browser.sleep(2000);
 

@@ -3,7 +3,8 @@ module.exports = {
     nodeElements: {  
         vectus: element(by.id('Vectus_anchor')),
         node: element(by.id('Node_anchor')),
-        root_attr: element.all(by.className('show-hidden-on-hover ng-binding ng-scope')),
+        //root_attr: element.all(by.className('show-hidden-on-hover ng-binding ng-scope')),
+        root_attr: element.all(by.className('ng-binding')),
         goToParentRoot: element(by.css('[disabled="!resourceWrapper.$hasParent()"]')),
         goToParent: element(by.css('[fms-icon="up"]')),
         vectusList: element(by.linkText('Vectus list')),
@@ -13,12 +14,16 @@ module.exports = {
         scmp: element(by.linkText('Scmp')),
         rootDescription: element(by.css('[name="description"]')),
         rootDescriptionValue: element(by.css('[ng-if="prop.schema.type!=\'linked\'"]')),
+        addVectusButton: element(by.css('[ng-click="vm.add()"]')),
+        searchVectus: element(by.css('[ng-model="searchText"]')),
+        deleteVectus: element(by.css('[tip="Delete Vectus"]')),
     },
 
     communicationElements: {  
         communication: element(by.id('Communication_anchor')),
         communication_engine: element(by.buttonText('CommunicationEngine')),
-        router: browser.element(by.css('[ng-click="followSingleAggregation(aggregation)"]')),
+        //router: browser.element(by.css('[ng-click="followSingleAggregation(aggregation)"]')),
+        router: element(by.linkText('Router')),
         arp: element(by.linkText('Arp')),
         static_arp_button: element(by.buttonText('StaticArp')),
         //static_arp_instance: element(by.css('[ng-class="{active: tableConfig.select.map[instance.id]}"]')),
@@ -31,7 +36,7 @@ module.exports = {
     },
 
     buttons: {  
-        add_button: element(by.css('[fms-icon="add"]')),
+        add_button: element(by.css('[tip="Add new resource"]')),
         cancel_button: element(by.buttonText('Cancel')),
         submit_button: element(by.buttonText('Submit')),
         save_button: element(by.buttonText('Save')),
@@ -47,12 +52,16 @@ module.exports = {
         macAdd: element(by.css('[name="macAddress"]')),
         ipInterface: element(by.css('[name="ipInterface"]')),
         port: element(by.css('[name="port"]')),
+        nameip: element(by.id('nameInput')),
+        descriptionip: element(by.id('descriptionInput')),
+        ipAddip: element(by.id('ipInput')),
+        group: element(by.id('groupInput')),
     },
 
-    clickAddButton: function(){
+    /*clickAddButton: function(){
         var button_ele = this.buttons;
         button_ele.add_button.click();
-    },
+    },*/
 
     clickCancelButton: function(){
         var button_ele = this.buttons;
@@ -100,7 +109,10 @@ module.exports = {
     
     //Checks if new instance of notification subscription has empty initial values
     checkNewNotifSubsInstance: function() { 
-        this.clickAddButton();
+        //var button_ele = this.buttons;
+        browser.sleep(2000);
+        element.all(by.className('btn btn-link p-0')).get(3).click();
+        //this.clickAddButton();
         var dialog_box_ele = this.dialogBox;
         browser.sleep(2000);
         //expects fields to be empty
@@ -129,7 +141,7 @@ module.exports = {
         browser.sleep(2000);
         communication_ele.static_arp_button.click();
         browser.sleep(2000);
-        this.clickAddButton();
+        element.all(by.className('btn btn-link p-0')).get(3).click();
         var dialog_box_ele = this.dialogBox;
         browser.sleep(2000);
         //expects fields to be empty
@@ -225,5 +237,24 @@ module.exports = {
         this.clickSaveButton();
         browser.sleep(2000);
     },
-
+    AddNewVectus: function() {
+        var node_ele = this.nodeElements;
+        var dialog_box_ele = this.dialogBox;
+        node_ele.addVectusButton.click();
+        browser.sleep(2000);
+        dialog_box_ele.nameip.sendKeys('test add new sem1');
+        dialog_box_ele.descriptionip.sendKeys('automation test');
+        dialog_box_ele.ipAddip.sendKeys('139.145.75.203');
+        this.clickSaveButton();
+    },
+    DeleteVectus: function() {
+        var node_ele = this.nodeElements;
+        node_ele.searchVectus.sendKeys('139.145.75.203');
+        browser.sleep(5000);
+        //this.clickDeleteButton();
+        node_ele.deleteVectus.click();
+        browser.sleep(2000);
+        this.clickOkButton();
+    },
+    
 };

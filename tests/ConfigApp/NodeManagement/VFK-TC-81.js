@@ -1,10 +1,9 @@
 var loginPage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectLogin'); 
 var nodePage = require('c:/Verification/practice protractor_21feb/tests/PageObjects/ConfigApp/PageObjectNode'); 
 
-describe('VFK-TC-81,235', function(){
+describe('VFK-TC-81', function(){
     /*
-    #534-1 Verify ASIM browsing 
-    #534-2 Verify Node Selection 
+    #534-1 Verify ASIM browsing  
     */
    browser.waitForAngularEnabled(false);
 
@@ -16,7 +15,7 @@ describe('VFK-TC-81,235', function(){
         browser.sleep(2000);
         nodePage.RootChildAggregations();
         browser.sleep(2000);
-        nodePage.RootCheckParentLink();
+       /* nodePage.RootCheckParentLink();
         browser.sleep(2000);
         nodePage.CheckVectusList();
         //child node checks
@@ -26,7 +25,7 @@ describe('VFK-TC-81,235', function(){
         nodePage.GoToParent();
         nodePage.RootAttributesPresent();
         nodePage.RootChildAggregations();
-        nodePage.EmptyStringAttribute();
+        nodePage.EmptyStringAttribute();*/
         loginPage.vectusLogout();
     });
 });

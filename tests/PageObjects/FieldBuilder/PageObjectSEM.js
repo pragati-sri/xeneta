@@ -15,7 +15,7 @@ module.exports = {
         users_list: element.all(by.css('[ng-repeat="user in currentNode.node.vectus.users"]')),
         SEM_edit: element(by.css('[title="Edit properties"]')),
         SEM_name: element(by.id('name')),
-        SEM_SaveasTemplate: element(by.css('[fms-icon="copy"]')),
+        SEM_SaveasTemplate: element(by.css('[fms-icon="save"]')),
         CDB_Template: element(by.id('nav-cdbTemplate-link')),
         AAA_test_template: element(by.cssContainingText('.ng-binding.ng-scope', 'AAA_test_template')),
         delete_button: element.all(by.css('[fms-icon="delete"]')).get(0),

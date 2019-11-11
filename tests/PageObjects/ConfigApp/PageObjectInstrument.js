@@ -7,10 +7,14 @@ module.exports = {
     }, 
     
     instrument_profile: {  
-        details: element.all(by.css('[style="padding-left: 10px"]')).last(),
+        //details: element.all(by.css('[style="padding-left: 10px"]')).last(),
+        profile_id: element.all(by.className('mr-3 ng-binding')).get(0),
+        profile_desc: element.all(by.className('mr-3 ng-binding')).get(1),
+        profile_size: element.all(by.className('mr-3 ')).get(2),
+        profile_status: element.all(by.className('mr-3 ')).get(3),
         name: element.all(by.css('[style="padding-left: 10px"]')).last(),
         error: element(by.linkText('Instrument Profile upload failed for invalid_profile.xml')),
-        remove_error: element(by.className('glyphicon glyphicon-remove pull-right ng-scope')),
+        remove_error: element(by.css('[fms-icon="close"]')),
     },
 
     dialog_box: {  
@@ -51,7 +55,11 @@ module.exports = {
         browser.sleep(10000);  
 
         //validations
-        expect(profile_ele.details.getText()).toContain('ID:test Description:used for automated testing Size:1287 Status:STABLE');
+        //expect(profile_ele.details.getText()).toContain('ID: test Description: used for automated testing Size: 1287 Status: STABLE');
+        expect(profile_ele.profile_id.getText()).toContain('ID: test');
+        expect(profile_ele.profile_desc.getText()).toContain('Description: used for automated testing');
+        expect(profile_ele.profile_size.getText()).toContain('Size: 1287');
+        expect(profile_ele.profile_status.getText()).toContain('Status: STABLE');
 
         //teardown file upload
         button_ele.delete_profile_test.click();
@@ -69,7 +77,7 @@ module.exports = {
         browser.sleep(2000);
         instrument.upload_link.click();
         browser.sleep(2000);
-        dialog_ele.filename.sendKeys('Profile_test.xml');
+        dialog_ele.filename.sendKeys('Invalid_Profile_test.xml');
         browser.sleep(2000);
         dialog_ele.id.sendKeys('test');
         browser.sleep(2000);

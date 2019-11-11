@@ -10,16 +10,34 @@ module.exports = {
         signIn: element(by.buttonText('Sign In')),
         fbuser: element(by.cssContainingText('.ng-binding', 'fbuser')),
         fbadmin: element(by.cssContainingText('.ng-binding', 'fbadmin')),
+        filter_project: element.all(by.css('[placeholder="Filter"]')),
+        open_project: element(by.className('fas fa-play')),
     },  
       
     login_corporate: function() {  
         var ele = this.elements;
         ele.clickField.click();
+        browser.sleep(2000);
         ele.corporate_email.sendKeys('pragati.srivastava@akersolutions.com');
         ele.next.click();
         browser.sleep(6000);
         expect(ele.corporate_user.isPresent()).toBeTruthy();
         browser.sleep(4000);
+    },  
+
+    login_corporate_dev: function() {  
+        var ele = this.elements;
+        //ele.clickField.click();
+        browser.sleep(2000);
+        ele.corporate_email.sendKeys('pragati.srivastava@akersolutions.com');
+        ele.next.click();
+        browser.sleep(6000);
+        expect(ele.corporate_user.isPresent()).toBeTruthy();
+        browser.sleep(4000);
+        ele.filter_project.sendKeys('Open for all');
+        browser.sleep(2000);
+        ele.open_project.click();
+        browser.sleep(2000);
     },  
 
 
