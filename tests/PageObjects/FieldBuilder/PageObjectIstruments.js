@@ -8,13 +8,14 @@ module.exports = {
         edit_button: element(by.css('[fms-icon="edit"]')),
         add_button: element(by.css('[fms-icon="add"]')),
         delete_button: element.all(by.css('[fms-icon="delete"]')).last(),
+        instrument_button: element(by.linkText('Instrument')),
     },
     mappingElements:{
         mappings: element(by.linkText('Mappings')),
         modbus_mapping: element(by.tagName('em')),
         general: element(by.linkText('General')),
         mapping_mastering_config: element(by.linkText('Mastering Config')),
-        reset_command: element(by.css('[name="Mastering Config reset command"]')),
+        reset_command: element(by.id('reset')),
     },
     definitionElements:{
         definitions: element(by.linkText('Definitions')),
@@ -63,6 +64,10 @@ module.exports = {
     clickDelete: function(item) {  
         var instrument_buttons = this.instrumentButtons;
         instrument_buttons.delete_button.click();
+    },
+    clickInstrument: function(item) {
+        var instrument_buttons = this.instrumentButtons;
+        instrument_buttons.instrument_button.click();
     },
 
 

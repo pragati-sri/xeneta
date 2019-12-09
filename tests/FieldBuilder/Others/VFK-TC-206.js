@@ -26,11 +26,11 @@ describe('VFK-TC-206', function(){
         browser.sleep(2000);
         var random = randomstring.generate({length: 3,charset: 'numeric'});
         browser.sleep(2000);
-        var reset_command = element(by.css('[name="Mastering Config reset command"]'));
+        var reset_command = element(by.id('reset'));
         browser.sleep(2000);
         reset_command.click().clear().sendKeys(random);
         browser.sleep(2000);
-        element(by.css('[name="Mastering Config init time"]')).click();
+        element(by.id('initTime')).click();
         browser.sleep(2000);
         instrumentPage.save();
         browser.sleep(2000);

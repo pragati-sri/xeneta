@@ -4,7 +4,13 @@ module.exports = {
         session_error: element(by.linkText('Session error')),
         server_exception: element(by.linkText('Server exception')),
         //server_exception_text: element(by.className('ng-binding')).getText(),
-    },  
+    },
+    
+    managementProtocolsEle: {    
+        managementProtocols: element(by.id('ManagementProtocols_anchor')),
+        watchdog: element(by.buttonText('WatchdogGroup')),
+        //server_exception_text: element(by.className('ng-binding')).getText(),
+    },
 
     userManagement: {    
         users_tab: element(by.linkText('Users')),
@@ -15,11 +21,16 @@ module.exports = {
         user_name: element(by.id('username')),
         password: element(by.id('password')),
         role: element(by.css('[name="role"]')),
+        watchdogGroup: element(by.css('[name="watchdogGroup"]')),
         change_password: element(by.id('changePassword')),
+        description: element(by.css('[name="description"]')),
+        /*enableWatchdogGroup: element(by.css('[name="enableWatchdogGroup"]')),
+        timeout: element(by.css('[name="timeout"]')),*/
+        
     },
 
     buttons: {  
-        add_button: element(by.css('[fms-icon="add"]')),
+        add_button: element(by.className('fas fa-plus text-success')),
         cancel_button: element(by.buttonText('Cancel')),
         submit_button: element(by.buttonText('Submit')),
         navigate_to: element.all(by.css('[fms-icon="goto"]')).last(),
@@ -121,6 +132,8 @@ module.exports = {
     browser.sleep(2000);
     expect(operator.getText()).toBe('AAOPERAT');
     },
+
+    
 
     //Operator tries to create a new user
     operatorCreatesUser: function() {
@@ -293,6 +306,65 @@ module.exports = {
         //verify role update
         var operator1 = element.all(by.css('[ng-class="getTdClass(propDef, instance)"]')).get(1);
         expect(operator1.getText()).toContain('ENGINEER'); 
+    },
+
+    addWatchdogGroup: function() {
+        var mgmt_protocol = this.managementProtocolsEle
+        var dialog_ele = this.dialogBox
+        mgmt_protocol.managementProtocols.click();
+        browser.sleep(2000);
+        mgmt_protocol.watchdog.click();
+        browser.sleep(4000);
+        //this.clickAddButton();
+        element(by.className('fas fa-plus text-success')).click();
+        browser.sleep(4000);
+        dialog_ele.description.sendKeys('testGroup');
+        browser.sleep(2000);
+        this.clickSubmitButton();
+        browser.sleep(2000);
+
+        //verify watchdog group created successfully
+        var name = element(by.css('[ng-if="tdType()===\'basic\'"]'));
+        expect(name.getText()).toContain('testGroup');
+        browser.sleep(2000);
+    },
+    createUser: function(username, password) {  
+        var user_ele = this.userManagement;
+        user_ele.users_tab.click(); 
+        browser.sleep(2000);
+        element(by.className('fas fa-plus text-success')).click();
+        browser.sleep(2000);
+        var dialogBox_ele = this.dialogBox;
+        dialogBox_ele.user_name.click().sendKeys(username);
+        dialogBox_ele.password.click().sendKeys(password);
+    },
+
+    createUserWithWatchdogGroup: function() {
+        var user_ele = this.userManagement
+        var dialog_ele = this.dialogBox
+        user_ele.users_tab.click();
+        browser.sleep(2000);
+        this.createUser('testuser','test123456789');
+        browser.sleep(2000);
+        dialog_ele.role.click().sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ENTER);
+        browser.sleep(2000);
+        dialog_ele.watchdogGroup.click().sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ARROW_DOWN).sendKeys(protractor.Key.ENTER);
+        browser.sleep(2000);
+        this.clickSubmitButton();
+        browser.sleep(4000);
+        
+        //verify watchdog group selected
+        browser.sleep(2000);
+        var watchdog= element.all(by.css('[ng-repeat="propDef in tableModel.columns track by $index"]')).last().getText();
+        browser.sleep(2000);
+        expect(watchdog.getText()).toBe('WatchdogGroup:1');
+    },
+
+    deleteUserWithWatchdogGroup: function() {
+        var delete_button = element.all(by.css('[fms-icon="delete"]')).last();
+        delete_button.click();
+        this.clickOkButton();
+        browser.sleep();
     },
             
 };

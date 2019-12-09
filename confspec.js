@@ -31,12 +31,12 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
-    specs: ['./tests/ConfigApp/Instruments/VFK-TC-38.js',],
-    //specs: ['./tests/FieldBuilder/Others/VFK-TC-203.js',],
+    specs: ['./tests/ConfigApp/Users/VFK-TC-669.js',],
+    //specs: ['./tests/FieldBuilder/CDB_fb/VFK-TC-696.js',],
     /*specs: [
             //fieldBuilder
             './tests/FieldBuilder/Cloud_sanity_check/logins.js',
-            './tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
+            //'./tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
             './tests/FieldBuilder/Instruments_fb/VFK-TC-219.js',
             './tests/FieldBuilder/IntegratedConfigApp/VFK-TC-246.js',
             './tests/FieldBuilder/Others/VFK-TC-184,185.js',
@@ -47,7 +47,7 @@ exports.config ={
             './tests/FieldBuilder/Others/VFK-TC-619.js', 
             './tests/FieldBuilder/Others/VFK-TC-620,192.js',
             //configApp
-            './tests/ConfigApp/CDBManagement/VFK-TC-49,50.js',
+            //'./tests/ConfigApp/CDBManagement/VFK-TC-49,50.js',
             './tests/ConfigApp/CDBManagement/VFK-TC-56.js',
             './tests/ConfigApp/CDBManagement/VFK-TC-58,60.js',
             './tests/ConfigApp/Instruments/VFK-TC-38.js',

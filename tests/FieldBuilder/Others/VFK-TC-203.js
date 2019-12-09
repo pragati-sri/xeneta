@@ -19,7 +19,7 @@ describe('VFK-TC-203', function(){
         semPage.editCdbTemplate();
         browser.sleep(1000);
         //check warning exists
-        var warn = element(by.css('[popover="CDB IP address is not unique"]'));
+        var warn = element(by.css('[uib-popover="CDB IP address is not unique"]'));
         expect(warn.isPresent()).toBe(true);
         browser.sleep(2000);
         //remove warning for next test run

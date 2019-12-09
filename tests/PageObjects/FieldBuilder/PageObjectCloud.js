@@ -47,9 +47,9 @@ module.exports = {
         ele.password.sendKeys('OS1G[\'c9HTg?=@[j)O:[');
         ele.signIn.click();
         browser.driver.navigate().refresh();
-        browser.sleep(4000);
+        browser.sleep(2000);
         expect(ele.fbuser.isPresent()).toBeTruthy();
-        browser.sleep(4000);
+        browser.sleep(2000);
     },  
 
     login_fbadmin: function() {  
