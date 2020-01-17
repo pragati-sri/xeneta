@@ -6,7 +6,7 @@ module.exports = {
         ok_button: element(by.id('confirmOkBtn')),
         submit_button: element(by.id('submit')),
         edit_button: element(by.css('[fms-icon="edit"]')),
-        add_button: element(by.css('[fms-icon="add"]')),
+        add_button: element(by.css('[icon="add"]')),
         delete_button: element.all(by.css('[fms-icon="delete"]')).last(),
         instrument_button: element(by.linkText('Instrument')),
     },

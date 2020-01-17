@@ -31,8 +31,8 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
-    specs: ['./tests/ConfigApp/Users/VFK-TC-669.js',],
-    //specs: ['./tests/FieldBuilder/CDB_fb/VFK-TC-696.js',],
+    //specs: ['./tests/ConfigApp/Users/VFK-TC-669.js',],
+    specs: ['./tests/FieldBuilder/Instruments_fb/VFK-TC-712.js',],
     /*specs: [
             //fieldBuilder
             './tests/FieldBuilder/Cloud_sanity_check/logins.js',

@@ -14,11 +14,16 @@ describe('VFK-TC-712', function(){
         browser.sleep(2000); 
         cloud.login_fbuser();
         browser.sleep(2000);
+        element(by.css('[placeholder="Filter"]')).sendKeys('pragati');
+        browser.sleep(3000);
+        element(by.className('fas fa-play')).click();
+        browser.sleep(2000);
         instrument.clickInstrument();
         browser.sleep(2000);
         instrument.openDefinitions();
-        browser.sleep(2000);      
-        instrument.clickAdd();
+        browser.sleep(2000);    
+        element(by.css('[icon="add"]')).click();  
+        //instrument.clickAdd();
         browser.sleep(2000);
     });
 });
