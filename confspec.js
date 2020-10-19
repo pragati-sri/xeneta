@@ -31,12 +31,13 @@ exports.config ={
     },
     seleniumAddress: 'http://localhost,:4444/wd/hub/',
 
-    //specs: ['./tests/ConfigApp/Users/VFK-TC-669.js',],
-    specs: ['./tests/FieldBuilder/Instruments_fb/VFK-TC-712.js',],
+    //specs: ['./tests/ConfigApp/Others/VFK-TC-120.js',],
+    //specs: ['./tests/new/scheduleDemo.js',],
+    specs: ['./tests/new/openRoles.js',],
     /*specs: [
             //fieldBuilder
             './tests/FieldBuilder/Cloud_sanity_check/logins.js',
-            //'./tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
+            './tests/FieldBuilder/CDB_fb/VFK-TC-214.js',
             './tests/FieldBuilder/Instruments_fb/VFK-TC-219.js',
             './tests/FieldBuilder/IntegratedConfigApp/VFK-TC-246.js',
             './tests/FieldBuilder/Others/VFK-TC-184,185.js',
